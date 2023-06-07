@@ -21,4 +21,14 @@
 #grid{
     margin: 0 auto;
     border: dashed white 1px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+    width: 500px;
+}
+.cell{
+    flex-basis: calc(100% / 8);
+    height: calc(100% / 8);
+    border: solid white 1px;
+    cursor: pointer;
 }
