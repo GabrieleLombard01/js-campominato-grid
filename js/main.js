@@ -29,23 +29,33 @@ const createCell = (cellNumber) => {
 
 // Recupero gli elementi dal dom
 const grid = document.getElementById('grid');
+const GoBtn = document.getElementById('play-btn');
 
 // Preparo i miei dati iniziali
 const rows = 10;
 const cols = 10;
 const totalCells = cols * rows;
 
+//In ascolto sul bottone PLAY
+GoBtn.addEventListener('click', function() {
+    grid.classList.remove(`d-none`);
+    grid.classList.add(`active`);
+    
+    console.log();
+});
+
 // Renderizzo le celle
 for (let i = 1; i <= totalCells; i++) {
-
     const randomNumber = getRandomNumber(1, 100)
-
     const cell = createCell(randomNumber);
-
     cell.addEventListener('click', () => {
-        cell.classList.add('clicked');
+    cell.classList.add('clicked');
     });
     grid.appendChild(cell);
+
+    //IN ascolto sulle caselle
+    grid.addEventListener("click", () => {
+        console.log(randomNumber);
+    });
 }
 
-//todo ---LOGICA---

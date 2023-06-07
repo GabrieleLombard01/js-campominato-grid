@@ -1,21 +1,39 @@
 /*CSS reset*/
-
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/*Custom properties*/
-
+/*Pseudo-classes*/
+button:hover{
+    background-color: #05397d;
+}
 /*Generics*/
-
+footer{
+    background-color: black;
+    color: white;
+    height: 120px;
+}
+header{
+    padding: 5px 0 5px 0;
+}
+figure{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+button{
+    border-radius: 5px;
+    font-weight: bold;
+    color: #6ed663;
+    background-color: #021732;
+}
 /*Utilties*/
 .container{
     border: solid red 1px;
 }
-.bg_lightyellow{
-    background-color: rgb(244, 244, 189);
+.active{
+    display: block;
 }
 /*GRID*/
 #grid{
@@ -37,7 +55,6 @@
     color: white;
     font-size: 40px;
 }
-
 .cell.clicked{
-    background-color: rgb(0, 68, 77);
+    background-color: #05397d;
 }
