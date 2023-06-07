@@ -15,9 +15,10 @@ const getUniqueRandomNumber = (min, max, blacklist) => {
 }
 // Funzione per creare una cella
 const createCell = () => {
-    const cell = document.createElement('div')
+    const cell = document.createElement('div');
     cell.className = 'cell';
-    return 'cell';
+
+    return cell;
 }
 
 //todo ---OPERAZIONI INIZIALI---
@@ -33,6 +34,9 @@ const totalCells = cols * rows;
 // Renderizzo le celle
 for (let i = 0; i < totalCells; i++) {
     const cell = createCell();
+    cell.addEventListener('click', () => {
+        cell.classList.add('clicked');
+    });
     grid.appendChild(cell);
 }
 
