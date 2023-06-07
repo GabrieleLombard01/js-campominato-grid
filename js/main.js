@@ -31,14 +31,14 @@ const createCell = (cellNumber) => {
 const grid = document.getElementById('grid');
 
 // Preparo i miei dati iniziali
-const rows = 8;
-const cols = 8;
+const rows = 10;
+const cols = 10;
 const totalCells = cols * rows;
 
 // Renderizzo le celle
 for (let i = 1; i <= totalCells; i++) {
 
-    const randomNumber = getRandomNumber(1,64)
+    const randomNumber = getRandomNumber(1, 100)
 
     const cell = createCell(randomNumber);
 
