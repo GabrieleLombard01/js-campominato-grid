@@ -3,6 +3,9 @@ console.log('JS OK');
 
 //* FUNZIONI:
 
+// Funzione random number da min a max
+const getRandomNumber = (min,max) => Math.floor(Math.random() * (max - min)) + min;
+
 // Funzione che mi restituisce un numero rando ma non uno presente nella blacklist
 const getUniqueRandomNumber = (min, max, blacklist) => {
     let randomNumber;
@@ -33,9 +36,11 @@ const cols = 8;
 const totalCells = cols * rows;
 
 // Renderizzo le celle
-for (let i = 0 + 1; i <= totalCells; i++) {
+for (let i = 1; i <= totalCells; i++) {
 
-    const cell = createCell(i);
+    const randomNumber = getRandomNumber(1,64)
+
+    const cell = createCell(randomNumber);
 
     cell.addEventListener('click', () => {
         cell.classList.add('clicked');
