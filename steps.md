@@ -1,0 +1,2 @@
+- CREARE una griglia 8 x 8.
+- Ogni volta che clicco su un quadrato, questo si colora di verde

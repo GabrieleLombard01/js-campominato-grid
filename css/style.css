@@ -11,3 +11,14 @@
 /*Generics*/
 
 /*Utilties*/
+.container{
+    border: solid red 1px;
+}
+.bg_lightyellow{
+    background-color: rgb(244, 244, 189);
+}
+/*GRID*/
+#grid{
+    margin: 0 auto;
+    border: dashed white 1px;
+}
