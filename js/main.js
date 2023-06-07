@@ -13,6 +13,12 @@ const getUniqueRandomNumber = (min, max, blacklist) => {
     }   while (blacklist.includes(randomNumber))
     return randomNumber;
 }
+// Funzione per creare una cella
+const createCell = () => {
+    const cell = document.createElement('div')
+    cell.className = 'cell';
+    return 'cell';
+}
 
 //todo ---OPERAZIONI INIZIALI---
 
@@ -25,6 +31,9 @@ const cols = 8;
 const totalCells = cols * rows;
 
 // Renderizzo le celle
-
+for (let i = 0; i < totalCells; i++) {
+    const cell = createCell();
+    grid.appendChild(cell);
+}
 
 //todo ---LOGICA---
