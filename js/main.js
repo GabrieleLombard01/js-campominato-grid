@@ -14,9 +14,10 @@ const getUniqueRandomNumber = (min, max, blacklist) => {
     return randomNumber;
 }
 // Funzione per creare una cella
-const createCell = () => {
+const createCell = (cellNumber) => {
     const cell = document.createElement('div');
     cell.className = 'cell';
+    cell.innerText = cellNumber;
 
     return cell;
 }
@@ -32,8 +33,10 @@ const cols = 8;
 const totalCells = cols * rows;
 
 // Renderizzo le celle
-for (let i = 0; i < totalCells; i++) {
-    const cell = createCell();
+for (let i = 0 + 1; i <= totalCells; i++) {
+
+    const cell = createCell(i);
+
     cell.addEventListener('click', () => {
         cell.classList.add('clicked');
     });
