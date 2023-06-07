@@ -23,12 +23,16 @@
     border: dashed white 1px;
     display: flex;
     flex-wrap: wrap;
-    height: 500px;
-    width: 500px;
+    height: 700px;
+    width: 700px;
 }
 .cell{
     flex-basis: calc(100% / 8);
     height: calc(100% / 8);
     border: solid white 1px;
     cursor: pointer;
+}
+
+.cell.clicked{
+    background-color: green;
 }

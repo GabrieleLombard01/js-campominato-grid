@@ -14,4 +14,17 @@ const getUniqueRandomNumber = (min, max, blacklist) => {
     return randomNumber;
 }
 
-const number = getUniqueRandomNumber(1, 20, [3, 7]);
+//todo ---OPERAZIONI INIZIALI---
+
+// Recupero gli elementi dal dom
+const grid = document.getElementById('grid');
+
+// Preparo i miei dati iniziali
+const rows = 8;
+const cols = 8;
+const totalCells = cols * rows;
+
+// Renderizzo le celle
+
+
+//todo ---LOGICA---
