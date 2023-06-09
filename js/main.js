@@ -1,61 +1,80 @@
 //JS RESET
-console.log('JS OK');
+console.log('JS OK')
 
-//* FUNZIONI:
 
-// Funzione random number da min a max
-const getRandomNumber = (min,max) => Math.floor(Math.random() * (max - min)) + min;
-
-// Funzione che mi restituisce un numero rando ma non uno presente nella blacklist
-const getUniqueRandomNumber = (min, max, blacklist) => {
-    let randomNumber;
-
-    // Continua a pescare finchè il numero random è presente nella blacklist
-    do {
-        randomNumber = Math.floor(Math.random() * (max - min)) + min;
-    }   while (blacklist.includes(randomNumber))
-    return randomNumber;
-}
-// Funzione per creare una cella
-const createCell = (cellNumber) => {
-    const cell = document.createElement('div');
-    cell.className = 'cell';
-    cell.innerText = cellNumber;
-
-    return cell;
-}
-
-//todo ---OPERAZIONI INIZIALI---
-
-// Recupero gli elementi dal dom
+// RECUPERO gli elementi dal DOM
 const grid = document.getElementById('grid');
-const GoBtn = document.getElementById('play-btn');
+const playButton = document.getElementById('play-button');
+const levelSelect = document.getElementById('difficulty');
 
-// Preparo i miei dati iniziali
-const rows = 10;
-const cols = 10;
-const totalCells = cols * rows;
 
-//In ascolto sul bottone PLAY
-GoBtn.addEventListener('click', function() {
-    grid.classList.remove(`d-none`);
-    grid.classList.add(`active`);
+//Funzione start-game
+function startGame(){
     
-    console.log();
-});
+    //! OPERAZIONI INIZIALI:
+    //Cambio il testo in RICOMINCIA
+    playButton.innerText = "Rigioca";
+    
+    //Svuoto la griglia
+    grid.innerHTML = '';
 
-// Renderizzo le celle
-for (let i = 1; i <= totalCells; i++) {
-    const randomNumber = getRandomNumber(1, 100)
-    const cell = createCell(randomNumber);
-    cell.addEventListener('click', () => {
-    cell.classList.add('clicked');
-    });
-    grid.appendChild(cell);
+    // Recupero il livello scelto
+    const level = levelSelect.value;
+    
+    //Calcolo le celle totali
+    let rows;
+    let cols;
 
-    //IN ascolto sulle caselle
-    grid.addEventListener("click", () => {
-        console.log(randomNumber);
-    });
-}
+    switch(level) {
+        case 'hard':
+            rows = 7;
+            cols = 7;
+            break;
+        case 'normal':
+            rows = 9;
+            cols = 9;
+            break;
+        case 'easy':
+            default:
+            rows = 10;
+            cols = 10;
+            break;
+    };
+    
+    //Funzione per creare la cella
+    const createCell = (cellNumber, level) => {
+
+        const cell = document.createElement('div');
+        cell.classList.add('cell', level);
+
+        
+
+        cell.append(cellNumber);
+
+        return cell;
+    };
+
+    const totalCells = rows * cols;
+    
+    //! LOGICA DI GIOCO EFFETTIVA:
+
+    //Generare la griglia
+    for(let i = 1; i <= totalCells; i++) {
+
+        //CREO la cella
+        const cell = createCell(i, level);
+
+        //IN ASCOLTO sulla cella
+        cell.addEventListener('click',() => {
+            cell.classList.add('clicked');
+            console.log(cell.innerText);
+        });
+
+        //La inserisco in pagina
+        grid.appendChild(cell);
+    }
+};
+
+//IN ASCOLTO sul play-button
+playButton.addEventListener('click', startGame);
 

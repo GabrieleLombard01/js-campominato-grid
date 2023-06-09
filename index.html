@@ -7,6 +7,7 @@
     <meta name="author" content="Gabriele Lombardo"> 
     <meta name="keywords" content="Boolean exercise Classe 100"> 
     <meta name="description" content="Riproduzione di un . . .">
+    <link rel="icon" href="img/Bomb-favicon.ico" type="img/ico">
     <!--TODO Font Awesome -->
     <link rel="stylesheet" 
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -23,29 +24,40 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container-fluid p-0">
-        <!-- Header -->
-        <header class="d-flex justify-content-between bg_lightyellow position-relative  align-items-center">
-            <div class="col-9">
-                <figure class="d-inline p-0 m-0">
-                    <a href="#"><img src="img/logo.png" alt="logo"></a>
-                </figure>
-                <h1 class="d-inline ms-5 ps-4">Campo Minato</h1>
+      <!--Header-->
+      <header class="container-fluid">
+            <div class="row justify-content-between">
+                  <!--Logo e titolo-->
+                  <div class="col-6 pt-2">
+                        <figure class="d-inline">
+                              <a href="#"><img class="logo_size" src="img/logo.png" alt="logo"></a>
+                        </figure>
+                        <h1 class="d-inline title_color">CAMPO MINATO</h1>
+                  </div>
+                  <!--Scelta difficoltà-->
+                  <div class="col-6 position-relative">
+                        <div class="difficulty_choise">
+                              <label for="difficulty" class=" title_color d-inline-block">Difficoltà:</label>
+                                  <select class="d-inline" id="difficulty">
+                                      <option value="easy">Facile</option>
+                                      <option value="normal">Normale</option>
+                                      <option value="hard">Difficile</option>
+                                  </select>
+                                  <button id="play-button" class="d-inline mt-1 px-4">Gioca</button>
+                        </div>
+                  </div>
             </div>
-            <div class="col-2 text-center">
-                <button id="play-btn" class="px-3">Gioca</button>
+      </header>
+      <!--GRID-->
+      <section class="">
+            <div id="grid">
+                  
             </div>
-        </header>
-        <!-- GRID -->
-        <section class="container-fluid bg-dark p-5 ">
-            <div class="d-none" id="grid"></div>
-        </section>
-        <!--Footer-->
-        <footer class="text-center pt-5">
-            <cite>Made with ♥ By Gabriele Lombardo</cite>
-        </footer>
-    </div>
-<!--! My JS -->
+      </section>
+      
+
+
+<!--! -MY JS- -->
 <script src="js/main.js"></script>
 </body>
 </html>

@@ -1,60 +1,113 @@
 /*CSS reset*/
+
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-/*Pseudo-classes*/
+
+/*Pseudo classes*/
 button:hover{
-    background-color: #05397d;
+    color: #f7e92f;
+    background-color: #ed202a;
+    border: solid black 2px;
 }
 /*Generics*/
-footer{
-    background-color: black;
-    color: white;
-    height: 120px;
-}
 header{
-    padding: 5px 0 5px 0;
+    width: 100%;
+    height: 110px;
+    background-image: url(../img/wall-bg-colored.png);
+    background-size: cover;
 }
-figure{
-    position: absolute;
-    top: 5px;
-    left: 5px;
+label{
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1px 5px 1px 5px;
+    border-radius: 5px;
+}
+select{
+    background-color: #f7e92f;
+    width: 200px;
+    border-radius: 5px;
 }
 button{
-    border-radius: 5px;
+    border-radius: 10px;
     font-weight: bold;
-    color: #6ed663;
-    background-color: #021732;
+    border: solid #ed202a 2px;
+    background-color: #f7e92f;
+}
+body{
+    background-image: url(../img/wall-bg-blackAndWhite.png);
+    background-size: cover;
+}
+section{
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 800px;
+    width: 1000px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: white;
+    padding: 50px;
 }
 /*Utilties*/
-.container{
-    border: solid red 1px;
+
+/*Header*/
+.title_color{
+    color: #f7e92f;
+    text-shadow: 3px 3px #ed202a;
 }
-.active{
-    display: block;
+.logo_size{
+    height: 90px;
+}
+.difficulty_choise{
+    position: absolute;
+    right: 50px;
+    top: 25px;
 }
 /*GRID*/
 #grid{
     margin: 0 auto;
-    border: dashed white 1px;
+    width: 900px;
+    height: 700px;
+    color: #f7e92f;
     display: flex;
     flex-wrap: wrap;
-    height: 700px;
-    width: 700px;
+    border-radius: 5px;
 }
-.cell{
-    flex-basis: calc(100% / 10);
-    height: calc(100% / 10);
-    border: solid white 1px;
+
+#grid .cell{
+    border: solid #ed202a 2px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 40px;
+    font-size: 35px;
+    font-weight: bold;
 }
-.cell.clicked{
-    background-color: #05397d;
+
+#grid .cell.hard {
+    height: calc(100% / 7);
+    width: calc(100% / 7);
+}
+#grid .cell.normal {
+    height: calc(100% / 9);
+    width: calc(100% / 9);
+}
+#grid .cell.easy {
+    height: calc(100% / 10);
+    width: calc(100% / 10);
+}
+
+
+#grid .cell.clicked{
+    background-color: rgb(5, 65, 0);
+}
+
+
+
+
+/*RESPONSIVE LAYOUT*/
+@media screen and (max-width:553px) {
+    header{height: 160px};
 }
